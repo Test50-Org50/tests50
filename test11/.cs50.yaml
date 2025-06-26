@@ -1,4 +1,7 @@
 check50:
+  files: &check50_files
+    - !exclude "*"
+    - !require average.cpp
   checks:
     test1:
       - run: g++ average.cpp -o average && ./average
@@ -12,9 +15,6 @@ check50:
       - run: g++ average.cpp -o average && ./average
         stdin: "2.5 3.7 4.1"
         stdout: "Average: 3.43"
-    files: &check50_files
-      - !exclude "*"
-      - !require average.cpp
     
 submit50:
   files: *check50_files
