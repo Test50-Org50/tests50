@@ -14,7 +14,7 @@ check50:
         stdout: "Average: 3.43"
     files: &check50_files
       - !exclude "*"
-      - !require average.c
+      - !require average.cpp
     
 submit50:
   files: *check50_files
