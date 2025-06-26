@@ -18,38 +18,38 @@ def compiles():
 @check50.check(compiles)
 def test_example():
     """calculates average correctly for example input (2.5, 3.7, 4.1)"""
-    check_average("2.5\n3.7\n4.1", "3.43")
+    check_average("2.5", "3.7", "4.1", "3.43")
 
 
 @check50.check(compiles)
 def test_integers():
     """calculates average correctly for integer inputs (1, 2, 3)"""
-    check_average("1\n2\n3", "2.00")
+    check_average("1", "2", "3", "2.00")
 
 
 @check50.check(compiles)
 def test_decimals():
     """calculates average correctly for decimal inputs (1.5, 2.5, 3.0)"""
-    check_average("1.5\n2.5\n3.0", "2.33")
+    check_average("1.5", "2.5", "3.0", "2.33")
 
 
 @check50.check(compiles)
 def test_negative():
     """calculates average correctly with negative numbers (-1.0, 0.0, 1.0) """
-    check_average("-1.0\n0.0\n1.0", "0.00")
+    check_average("-1.0", "0.0", "1.0", "0.00")
 
 
 @check50.check(compiles)
 def test_large_numbers():
     """calculates average correctly for large numbers (100.5, 200.3, 300.2)"""
-    check_average("100.5\n200.3\n300.2", "200.33")
+    check_average("100.5", "200.3", "300.2", "200.33")
 
 
-def check_average(input_values, expected_avg):
+def check_average(a, b, c, expected_avg):
     """Helper function to check average calculation"""
     # Define expected, actual outputs
     expected = f"Average: {expected_avg}\n"
-    actual = check50.run("./average").stdin(input_values).stdout()
+    actual = check50.run("./average").stdin(a).stdin(b).stdin(c).stdout()
 
     # Check output
     if not re.match(regex(expected_avg), actual):
