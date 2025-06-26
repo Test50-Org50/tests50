@@ -5,7 +5,9 @@ check50:
   checks:
     test1:
       - run: g++ average.cpp -o average && ./average
-        stdin: "1 2 3"
+        stdin: "1"
+        stdin: "2"
+        stdin: "3"
         stdout: "Average: 2.00"
     test2:
       - run: g++ average.cpp -o average && ./average
