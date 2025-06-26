@@ -12,4 +12,13 @@ check50:
       - run: g++ average.cpp -o average && ./average
         stdin: "2.5 3.7 4.1"
         stdout: "Average: 3.43"
+    
+submit50:
+  files:
+    - average.cpp
+  checks:
+    - test1
+    - test2
+    - test3
+  message: "Submit your average.cpp file to check50."
 
