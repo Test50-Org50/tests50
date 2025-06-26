@@ -1,0 +1,26 @@
+check50:
+  checks:
+    test1:
+      - run: g++ average.c -o average
+        run: ./average
+        stdin: "1 2 3"
+        stdout: "Average: 2.00"
+    test2:
+      - run: g++ average.c -o average
+        run: ./average
+        stdin: "1.5 2.5 3.0"
+        output: "Average: 2.33"
+    test3:
+      - run: g++ average.c -o average
+        run: ./average
+        stdin: "2.5 3.7 4.1"
+        output: "Average: 3.43"
+  files:
+    - !exclude "*"
+    - !require average.c
+
+submit50:
+  files: &check50_files
+    - !exclude "*"
+    - !require average.c
+  checks: *check50_files
