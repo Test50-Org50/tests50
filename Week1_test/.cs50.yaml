@@ -1,17 +1,15 @@
 check50:
   checks:
     test1:
-      - run: g++ average.c -o average && ./average
+      - run: g++ average.cpp -o average && ./average
         stdin: "1 2 3"
         stdout: "Average: 2.00"
     test2:
-      - run: g++ average.c -o average
-        run: ./average
+      - run: g++ average.cpp -o average && ./average
         stdin: "1.5 2.5 3.0"
         stdout: "Average: 2.33"
     test3:
-      - run: g++ average.c -o average
-        run: ./average
+      - run: g++ average.cpp -o average && ./average
         stdin: "2.5 3.7 4.1"
         stdout: "Average: 3.43"
 
