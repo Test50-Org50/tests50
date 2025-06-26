@@ -45,7 +45,7 @@ def test_large_numbers():
     check_average("100.5", "200.33")
 
 
-def check_average(a, b, c, expected_avg):
+def check_average(a, expected_avg):
     """Helper function to check average calculation"""
     # Define expected, actual outputs
     expected = f"Average: {expected_avg}\n"
