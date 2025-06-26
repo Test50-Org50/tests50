@@ -18,9 +18,4 @@ check50:
     
 submit50:
   files: *check50_files
-  checks:
-    - test1
-    - test2
-    - test3
-  message: "Submit your average.cpp file to check50."
 
