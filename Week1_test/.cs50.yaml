@@ -15,12 +15,4 @@ check50:
         run: ./average
         stdin: "2.5 3.7 4.1"
         stdout: "Average: 3.43"
-  files:
-    - !exclude "*"
-    - !require average.c
 
-submit50:
-  files: &check50_files
-    - !exclude "*"
-    - !require average.c
-  checks: *check50_files
