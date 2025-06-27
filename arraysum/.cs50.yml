@@ -1,0 +1,29 @@
+check50:
+  files: &check50_files
+    - !exclude "*"
+    - !require array_sum.cpp
+  checks:
+    test1:
+      - run: g++ array_sum.cpp -o array_sum && ./array_sum
+        stdin:
+          - 5
+          - 1 2 3 4 5
+        stdout: 15
+        exit: 0
+    test2:
+      - run: g++ array_sum.cpp -o array_sum && ./array_sum
+        stdin:
+          - 3
+          - 10 20 30
+        stdout: 60
+        exit: 0
+    test3:
+      - run: g++ array_sum.cpp -o array_sum && ./array_sum
+        stdin:
+          - 1
+          - 999
+        stdout: 999
+        exit: 0
+
+submit50:
+  files: *check50_files
