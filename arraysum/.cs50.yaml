@@ -3,21 +3,21 @@ check50:
     - !exclude "*"
     - !require average.cpp
   checks:
-    array sum:
+    test1:
       - run: g++ array_sum.py -o array_sum && ./array_sum
         stdin:
           - 5
           - 1 2 3 4 5
         stdout: 15
         exit: 0
-
+    test2:
       - run: g++ array_sum.py -o array_sum && ./array_sum
         stdin:
           - 3
           - 10 20 30
         stdout: 60
         exit: 0
-
+    test3:
       - run: g++ array_sum.py -o array_sum && ./array_sum
         stdin:
           - 1
