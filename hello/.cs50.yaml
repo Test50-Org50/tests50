@@ -6,7 +6,7 @@ check50:
     test1:
       - run: g++ hello.cpp -o hello && ./hello
         stdin: "Mohamed 24"
-        stdout: "Hello Mohammed, you are 24 years old."
+        stdout: "Hello Mohamed, you are 24 years old."
         exit: 0
     test2:
       - run: g++ hello.cpp -o hello && ./hello
